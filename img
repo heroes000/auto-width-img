@@ -1,0 +1,16 @@
+	//-- Изображение не растягивается, когда больше блока
+	$('.more-img img').each(function(){           
+		var t = $(this),
+		s = 'url(' + t.attr('src') + ')',
+		p = t.parent(),
+		d = $('<div></div>');
+		t.hide();
+		p.append(d);
+		d.css({
+			'height'                : 200,  //-- Вписывать нужную высоту фото
+			'background-size'       : 'cover',
+			'background-repeat'     : 'no-repeat',
+			'background-position'   : 'center',
+			'background-image'      : s
+		});
+	});
